@@ -1,8 +1,10 @@
 import { MongoClient } from 'mongodb';
+import dotenv from 'dotenv';
 
 let dbConnection;
+dotenv.config();
 
-const uri = 'mongodb://127.0.0.1:27017/bookstore';
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.s4mfrst.mongodb.net/?retryWrites=true&w=majority`
 
 export function connectToDB(callback) {
   MongoClient.connect(uri)
