@@ -14,6 +14,8 @@ const PORT = process.env.PORT || 3000;
 
 export let db;
 
+app.get('/', (req, res) => res.send("Hello World"))
+
 connectToDB(err => {
   if (!err) {
     app.listen(PORT, () => console.log('listening on port 3000'));
